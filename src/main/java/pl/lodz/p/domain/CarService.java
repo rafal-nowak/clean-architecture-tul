@@ -1,7 +1,6 @@
 package pl.lodz.p.domain;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -12,10 +11,6 @@ public class CarService {
     public Car findById(Integer id) {
         return carRepository.findById(id)
                 .orElseThrow(CarNotFoundException::new);
-    }
-
-    public PageCar findAll(Pageable pageable) {
-        return carRepository.findAll(pageable);
     }
 
     public List<Car> findAll() {
