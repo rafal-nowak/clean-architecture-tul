@@ -1,0 +1,26 @@
+### get cars
+GET http://localhost:8080/api/v1/cars
+Accept: application/json
+Content-Type: application/json
+
+### get car by id
+GET http://localhost:8080/api/v1/cars/1
+Accept: application/json
+Content-Type: application/json
+
+### create car
+POST http://localhost:8080/api/v1/cars
+Accept: application/json
+Content-Type: application/json
+
+{
+  "make": "Tesla",
+  "model": "Model S",
+  "year": "2023"
+}
+
+### delete car
+DELETE http://localhost:8080/api/v1/cars/1
+Accept: application/json
+Content-Type: application/json
+
