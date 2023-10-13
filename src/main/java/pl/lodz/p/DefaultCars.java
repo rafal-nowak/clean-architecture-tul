@@ -2,8 +2,8 @@ package pl.lodz.p;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import pl.lodz.p.domain.Car;
-import pl.lodz.p.domain.CarService;
+import pl.lodz.p.domain.car.Car;
+import pl.lodz.p.domain.car.CarService;
 
 @Component
 public class DefaultCars implements CommandLineRunner {

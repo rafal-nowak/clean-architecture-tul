@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.lodz.p.domain.Car;
-import pl.lodz.p.domain.CarService;
+import pl.lodz.p.domain.car.Car;
+import pl.lodz.p.domain.car.CarService;
 
 import java.util.List;
 
@@ -25,7 +25,6 @@ class CarController {
 
     private final CarService carService;
     private final CarDtoMapper carDtoMapper;
-    private final PageCarDtoMapper pageCarDtoMapper;
 
 
     @GetMapping
@@ -37,17 +36,6 @@ class CarController {
                         .map(carDtoMapper::toDto)
                         .toList());
     }
-
-//    @GetMapping
-//    public ResponseEntity<PageCarDto> getCars(
-//            @RequestParam(defaultValue = "0") int page,
-//            @RequestParam(defaultValue = "6") int size
-//    ) {
-//        Pageable pageable = PageRequest.of(page, size);
-//        PageCarDto pageCars = pageCarDtoMapper.toPageDto(carService.findAll(pageable));
-//
-//        return ResponseEntity.ok(pageCars);
-//    }
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<CarDto> getCar(@PathVariable Integer id) {

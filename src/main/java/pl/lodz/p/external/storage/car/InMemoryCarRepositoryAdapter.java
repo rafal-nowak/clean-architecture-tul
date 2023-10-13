@@ -1,9 +1,9 @@
-package pl.lodz.p.external.storage;
+package pl.lodz.p.external.storage.car;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
-import pl.lodz.p.domain.Car;
-import pl.lodz.p.domain.CarRepository;
+import pl.lodz.p.domain.car.Car;
+import pl.lodz.p.domain.car.CarRepository;
 
 import java.util.HashMap;
 import java.util.List;

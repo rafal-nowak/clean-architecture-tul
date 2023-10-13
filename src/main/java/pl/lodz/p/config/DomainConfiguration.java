@@ -1,12 +1,12 @@
-package pl.lodz.p.api.config;
+package pl.lodz.p.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pl.lodz.p.domain.CarRepository;
-import pl.lodz.p.domain.CarService;
-import pl.lodz.p.external.storage.CarEntityMapper;
-import pl.lodz.p.external.storage.InMemoryCarRepositoryAdapter;
+import pl.lodz.p.domain.car.CarRepository;
+import pl.lodz.p.domain.car.CarService;
+import pl.lodz.p.external.storage.car.CarEntityMapper;
+import pl.lodz.p.external.storage.car.InMemoryCarRepositoryAdapter;
 
 @Configuration
 @ConfigurationProperties("domain.properties")

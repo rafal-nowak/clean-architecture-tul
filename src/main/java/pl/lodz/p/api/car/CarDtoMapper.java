@@ -1,7 +1,7 @@
 package pl.lodz.p.api.car;
 
 import org.mapstruct.Mapper;
-import pl.lodz.p.domain.Car;
+import pl.lodz.p.domain.car.Car;
 
 @Mapper(componentModel = "spring")
 interface CarDtoMapper {

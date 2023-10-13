@@ -1,4 +1,4 @@
-package pl.lodz.p.external.storage;
+package pl.lodz.p.external.storage.car;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

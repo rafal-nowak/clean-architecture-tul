@@ -1,4 +1,4 @@
-package pl.lodz.p.domain;
+package pl.lodz.p.domain.car;
 
 import java.util.List;
 import java.util.Optional;

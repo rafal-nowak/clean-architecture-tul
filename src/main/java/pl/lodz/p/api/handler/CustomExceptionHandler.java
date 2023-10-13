@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import pl.lodz.p.api.response.ErrorResponse;
-import pl.lodz.p.domain.CarNotFoundException;
+import pl.lodz.p.domain.car.CarNotFoundException;
 
 import java.io.IOException;
 

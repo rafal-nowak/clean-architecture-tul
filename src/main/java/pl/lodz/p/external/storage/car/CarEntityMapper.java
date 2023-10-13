@@ -1,7 +1,7 @@
-package pl.lodz.p.external.storage;
+package pl.lodz.p.external.storage.car;
 
 import org.mapstruct.Mapper;
-import pl.lodz.p.domain.Car;
+import pl.lodz.p.domain.car.Car;
 
 
 @Mapper(componentModel = "spring")
