@@ -6,15 +6,22 @@ import org.springframework.context.annotation.Configuration;
 import pl.lodz.p.domain.CarRepository;
 import pl.lodz.p.domain.CarService;
 import pl.lodz.p.external.storage.CarEntityMapper;
+import pl.lodz.p.external.storage.CarStorageAdapter;
 import pl.lodz.p.external.storage.InMemoryCarRepositoryAdapter;
+import pl.lodz.p.external.storage.JpaCarRepository;
 
 @Configuration
 @ConfigurationProperties("domain.properties")
 public class DomainConfiguration {
 
+//    @Bean
+//    public CarRepository carRepository(CarEntityMapper mapper) {
+//        return new InMemoryCarRepositoryAdapter(mapper);
+//    }
+
     @Bean
-    public CarRepository carRepository(CarEntityMapper mapper) {
-        return new InMemoryCarRepositoryAdapter(mapper);
+    public CarRepository carRepository(JpaCarRepository jpaCarRepository, CarEntityMapper mapper) {
+        return new CarStorageAdapter(jpaCarRepository, mapper);
     }
 
     @Bean
