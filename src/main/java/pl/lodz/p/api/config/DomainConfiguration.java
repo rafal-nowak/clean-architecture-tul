@@ -10,6 +10,9 @@ import pl.lodz.p.external.storage.CarStorageAdapter;
 import pl.lodz.p.external.storage.InMemoryCarRepositoryAdapter;
 import pl.lodz.p.external.storage.JpaCarRepository;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+
 @Configuration
 @ConfigurationProperties("domain.properties")
 public class DomainConfiguration {
@@ -19,9 +22,20 @@ public class DomainConfiguration {
 //        return new InMemoryCarRepositoryAdapter(mapper);
 //    }
 
+//    @Bean
+//    public CarRepository carRepository(JpaCarRepository jpaCarRepository, CarEntityMapper mapper) {
+//        return new CarStorageAdapter(jpaCarRepository, mapper);
+//    }
+
     @Bean
-    public CarRepository carRepository(JpaCarRepository jpaCarRepository, CarEntityMapper mapper) {
-        return new CarStorageAdapter(jpaCarRepository, mapper);
+    public CarRepository carRepository(DataSource dataSource, CarEntityMapper mapper) {
+        Connection connection;
+        try {
+            connection = dataSource.getConnection();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to get JDBC connection", e);
+        }
+        return new CarStorageAdapter(connection, mapper);
     }
 
     @Bean
